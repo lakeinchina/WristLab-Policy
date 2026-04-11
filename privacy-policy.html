@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 | Privacy Policy</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: HarmonyOS Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0D0D1A;
+  color: #E0E0E0;
+  line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px 60px; }
+h1 { font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 12px; color: #FFF; }
+.meta { text-align: center; font-size: 13px; color: #888; margin-bottom: 28px; }
+h2 { font-size: 16px; font-weight: bold; margin: 28px 0 10px; color: #FFF; border-bottom: 1px solid #2a2a3a; padding-bottom: 8px; }
+p { margin-bottom: 12px; color: #B0B0B0; }
+ul { padding-left: 24px; margin-bottom: 12px; }
+li { margin-bottom: 8px; color: #B0B0B0; }
+.highlight { color: #E8E8E8; font-weight: 600; }
+.box { background: #13131f; border: 1px solid #2a2a3a; padding: 16px; border-radius: 8px; margin: 12px 0; }
+.note { background: #0f1a2e; border-left: 3px solid #4060a0; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+.lang-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: #0a0a14; border-bottom: 1px solid #222;
+  padding: 8px 16px; display: flex; justify-content: flex-end; align-items: center;
+}
+.lang-bar select {
+  background: #1a1a2e; color: #ddd; border: 1px solid #333;
+  padding: 6px 10px; border-radius: 6px; font-size: 13px; cursor: pointer;
+}
+.lang-bar select:focus { outline: 2px solid #4060a0; }
+.spacer { height: 44px; }
+[dir="rtl"] ul { padding-left: 0; padding-right: 24px; }
+[dir="rtl"] .note { border-left: none; border-right: 3px solid #4060a0; border-radius: 8px 0 0 8px; }
+[dir="rtl"] .lang-bar { justify-content: flex-start; }
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <select id="langSelect" onchange="setLang(this.value)"></select>
+</div>
+
+<div class="spacer"></div>
+<div class="container" id="content"></div>
+
+<script>
+const LANGS = {
+  zh:  '中文',
+  en:  'English',
+  de:  'Deutsch',
+  fr:  'Français',
+  it:  'Italiano',
+  es:  'Español',
+  pt:  'Português',
+  ru:  'Русский',
+  ja:  '日本語',
+  ar:  'العربية'
+};
+
+// ─── Content ────────────────────────────────────────────────────────────────
+
+const C = {
+
+// ── Chinese ──────────────────────────────────────────────────────────────────
+zh: {
+  title: '隐私政策',
+  subtitle: 'WristLab（腕上实验室）',
+  updated: '更新日期：2026年4月10日',
+  sections: [
+    { h: '概述',
+      body: `<p>WristLab 是一款<span class="highlight">纯单机应用</span>，不收集、不存储、不传输、不共享任何用户个人数据。所有传感器数据仅在设备本地实时处理，关闭对应页面后即丢弃。</p>` },
+    { h: '权限与传感器说明',
+      body: `<ul>
+        <li><b>加速度计</b>（ACCELEROMETER）— 加速度分析、出拳测量、虚拟骰子等</li>
+        <li><b>陀螺仪</b>（GYROSCOPE）— 姿态指引仪、出拳测量</li>
+        <li><b>麦克风</b>（MICROPHONE）— 音频分析与频谱显示，仅在进入音频分析页面时请求；数据仅用于实时显示，<b>不录音、不保存</b></li>
+        <li><b>振动</b>（VIBRATE）— 触觉反馈</li>
+        <li><b>无需授权的传感器</b>：气压计、重力、磁力计、环境光、方向传感器等，仅在对应页面实时使用</li>
+      </ul>` },
+    { h: '数据处理方式',
+      body: `<ul>
+        <li>所有数据均在设备本地处理，<b>不上传任何服务器</b></li>
+        <li>传感器数据仅在功能页面打开期间采集，离开页面立即停止</li>
+        <li>不做任何持久化存储</li>
+        <li>应用不含任何网络请求代码</li>
+      </ul>` },
+    { h: '第三方服务',
+      body: `<p>本应用不集成任何第三方 SDK、广告、分析或社交分享功能。</p>` },
+    { h: '您的权利',
+      body: `<p>根据相关法律，您享有知情权、访问权、更正权、删除权、限制处理权、可携权及反对权。由于本应用不存储任何个人数据，上述权利在实际操作上不存在可执行的对象。如有疑问请联系我们。</p>` },
+    { h: '联系方式',
+      body: `<div class="box"><p>开发者：Lake</p><p>邮箱：wristlab@outlook.com</p></div>` },
+    { h: '政策变更',
+      body: `<p>政策变更时将更新本页面的修订日期。继续使用本应用即表示接受修订后的政策。</p>` }
+  ]
+},
+
+// ── English ───────────────────────────────────────────────────────────────────
+en: {
+  title: 'Privacy Policy',
+  subtitle: 'WristLab',
+  updated: 'Last updated: April 10, 2026',
+  sections: [
+    { h: 'Overview',
+      body: `<p>WristLab is a <span class="highlight">purely offline application</span>. It does not collect, store, transmit, or share any personal user data. All sensor data is processed locally on your device in real-time and discarded when you close the feature page.</p>` },
+    { h: 'Permissions & Sensors',
+      body: `<ul>
+        <li><b>Accelerometer</b> — Acceleration analysis, punch measurement, virtual dice, etc.</li>
+        <li><b>Gyroscope</b> — Attitude indicator, punch measurement</li>
+        <li><b>Microphone</b> — Audio analysis and spectrum display only when the audio page is open; audio is processed in real-time, <b>never recorded or stored</b></li>
+        <li><b>Vibration</b> — Haptic feedback</li>
+        <li><b>No-authorization sensors</b>: Barometer, gravity, magnetometer, ambient light, orientation — used in real-time on respective pages only</li>
+      </ul>` },
+    { h: 'How Data Is Handled',
+      body: `<ul>
+        <li>All data is processed locally — <b>nothing is sent to any server</b></li>
+        <li>Sensor data is only collected while the relevant page is open</li>
+        <li>No persistent storage of any kind</li>
+        <li>The app contains no network request code</li>
+      </ul>` },
+    { h: 'Third-Party Services',
+      body: `<p>No third-party SDKs, advertising, analytics, or social sharing features are integrated.</p>` },
+    { h: 'Your Rights',
+      body: `<p>You have the right to access, rectify, erase, restrict, port, and object to processing of your personal data. Since this app retains no personal data, these rights have no practical subject matter. Contact us with any questions.</p>` },
+    { h: 'California Residents (CCPA)',
+      body: `<div class="note"><p>We do not sell or share your personal information as defined by the CCPA — because we collect none.</p></div>` },
+    { h: 'Contact',
+      body: `<div class="box"><p>Developer: Lake</p><p>Email: wristlab@outlook.com</p></div>` },
+    { h: 'Changes to This Policy',
+      body: `<p>We will update the revision date on this page if the policy changes. Continued use of the app constitutes acceptance of the revised policy.</p>` }
+  ]
+},
+
+// ── German ────────────────────────────────────────────────────────────────────
+de: {
+  title: 'Datenschutzerklärung',
+  subtitle: 'WristLab',
+  updated: 'Zuletzt aktualisiert: 10. April 2026',
+  sections: [
+    { h: 'Übersicht',
+      body: `<p>WristLab ist eine <span class="highlight">reine Offline-App</span>. Es werden keine personenbezogenen Daten erhoben, gespeichert, übertragen oder weitergegeben. Alle Sensordaten werden lokal auf Ihrem Gerät in Echtzeit verarbeitet und verworfen, sobald Sie die Seite schließen.</p>` },
+    { h: 'Berechtigungen & Sensoren',
+      body: `<ul>
+        <li><b>Beschleunigungssensor</b> — Beschleunigungsanalyse, Schlagmessung, virtuelle Würfel u.a.</li>
+        <li><b>Gyroskop</b> — Lageindikator, Schlagmessung</li>
+        <li><b>Mikrofon</b> — Audioanalyse und Spektrumanzeige nur während die Audioseite geöffnet ist; Audio wird in Echtzeit verarbeitet, <b>nie aufgezeichnet oder gespeichert</b></li>
+        <li><b>Vibration</b> — Haptisches Feedback</li>
+        <li><b>Sensoren ohne Berechtigung</b>: Barometer, Schwerkraft, Magnetometer, Umgebungslicht, Ausrichtung — nur auf den jeweiligen Seiten in Echtzeit genutzt</li>
+      </ul>` },
+    { h: 'Datenverarbeitung',
+      body: `<ul>
+        <li>Alle Daten werden lokal verarbeitet — <b>nichts wird an Server gesendet</b></li>
+        <li>Sensordaten werden nur gesammelt, während die jeweilige Seite geöffnet ist</li>
+        <li>Keine dauerhafte Datenspeicherung</li>
+        <li>Die App enthält keinen Netzwerk-Anforderungscode</li>
+      </ul>` },
+    { h: 'Drittanbieter',
+      body: `<p>Es sind keine Drittanbieter-SDKs, Werbung, Analyse- oder Social-Sharing-Funktionen integriert.</p>` },
+    { h: 'Ihre Rechte (DSGVO)',
+      body: `<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Da die App keine personenbezogenen Daten speichert, sind diese Rechte praktisch gegenstandslos.</p>
+      <div class="note"><p>Verantwortlicher: Lake · wristlab@outlook.com<br>Sie haben das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde (z.B. BfDI) zu beschweren.</p></div>` },
+    { h: 'Kontakt',
+      body: `<div class="box"><p>Entwickler: Lake</p><p>E-Mail: wristlab@outlook.com</p></div>` },
+    { h: 'Änderungen',
+      body: `<p>Bei Änderungen dieser Erklärung wird das Revisionsdatum auf dieser Seite aktualisiert.</p>` }
+  ]
+},
+
+// ── French ────────────────────────────────────────────────────────────────────
+fr: {
+  title: 'Politique de confidentialité',
+  subtitle: 'WristLab',
+  updated: 'Dernière mise à jour : 10 avril 2026',
+  sections: [
+    { h: 'Présentation',
+      body: `<p>WristLab est une <span class="highlight">application entièrement hors ligne</span>. Elle ne collecte, ne stocke, ne transmet ni ne partage aucune donnée personnelle. Toutes les données des capteurs sont traitées localement en temps réel et supprimées à la fermeture de la page.</p>` },
+    { h: 'Autorisations & Capteurs',
+      body: `<ul>
+        <li><b>Accéléromètre</b> — Analyse d'accélération, mesure de coup, dés virtuels, etc.</li>
+        <li><b>Gyroscope</b> — Indicateur d'attitude, mesure de coup</li>
+        <li><b>Microphone</b> — Analyse audio et spectre uniquement pendant l'ouverture de la page audio ; l'audio est traité en temps réel, <b>jamais enregistré ni stocké</b></li>
+        <li><b>Vibration</b> — Retour haptique</li>
+        <li><b>Capteurs sans autorisation</b> : baromètre, gravité, magnétomètre, lumière ambiante, orientation — utilisés en temps réel sur les pages correspondantes</li>
+      </ul>` },
+    { h: 'Traitement des données',
+      body: `<ul>
+        <li>Toutes les données sont traitées localement — <b>rien n'est envoyé à un serveur</b></li>
+        <li>Les données des capteurs ne sont collectées que pendant l'ouverture de la page</li>
+        <li>Aucun stockage persistant</li>
+        <li>L'application ne contient aucun code de requête réseau</li>
+      </ul>` },
+    { h: 'Services tiers',
+      body: `<p>Aucun SDK tiers, publicité, analyse ou partage social n'est intégré.</p>` },
+    { h: 'Vos droits (RGPD)',
+      body: `<p>Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition. Ces droits sont sans objet pratique car l'application ne conserve aucune donnée personnelle.</p>
+      <div class="note"><p>Responsable du traitement : Lake · wristlab@outlook.com<br>Vous pouvez déposer une réclamation auprès de la CNIL (cnil.fr).</p></div>` },
+    { h: 'Contact',
+      body: `<div class="box"><p>Développeur : Lake</p><p>Email : wristlab@outlook.com</p></div>` },
+    { h: 'Modifications',
+      body: `<p>En cas de modification, la date de révision sera mise à jour sur cette page.</p>` }
+  ]
+},
+
+// ── Italian ───────────────────────────────────────────────────────────────────
+it: {
+  title: 'Informativa sulla privacy',
+  subtitle: 'WristLab',
+  updated: 'Ultimo aggiornamento: 10 aprile 2026',
+  sections: [
+    { h: 'Panoramica',
+      body: `<p>WristLab è un'<span class="highlight">applicazione completamente offline</span>. Non raccoglie, non memorizza, non trasmette né condivide alcun dato personale. Tutti i dati dei sensori vengono elaborati localmente in tempo reale e scartati alla chiusura della pagina.</p>` },
+    { h: 'Autorizzazioni e sensori',
+      body: `<ul>
+        <li><b>Accelerometro</b> — Analisi accelerazione, misurazione pugni, dadi virtuali ecc.</li>
+        <li><b>Giroscopio</b> — Indicatore di assetto, misurazione pugni</li>
+        <li><b>Microfono</b> — Analisi audio e spettro solo mentre la pagina audio è aperta; l'audio è elaborato in tempo reale, <b>mai registrato o memorizzato</b></li>
+        <li><b>Vibrazione</b> — Feedback aptico</li>
+        <li><b>Sensori senza autorizzazione</b>: barometro, gravità, magnetometro, luce ambientale, orientamento — usati in tempo reale nelle rispettive pagine</li>
+      </ul>` },
+    { h: 'Gestione dei dati',
+      body: `<ul>
+        <li>Tutti i dati vengono elaborati localmente — <b>nulla viene inviato a server</b></li>
+        <li>I dati dei sensori vengono raccolti solo mentre la pagina è aperta</li>
+        <li>Nessuna memorizzazione persistente</li>
+        <li>L'app non contiene codice per richieste di rete</li>
+      </ul>` },
+    { h: 'Servizi di terze parti',
+      body: `<p>Nessun SDK di terze parti, pubblicità, analisi o condivisione social è integrato.</p>` },
+    { h: 'I tuoi diritti (GDPR)',
+      body: `<p>Hai diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al trattamento. Questi diritti sono privi di oggetto pratico poiché l'app non conserva dati personali.</p>
+      <div class="note"><p>Titolare del trattamento: Lake · wristlab@outlook.com<br>Puoi presentare reclamo al Garante Privacy italiano (garanteprivacy.it).</p></div>` },
+    { h: 'Contatti',
+      body: `<div class="box"><p>Sviluppatore: Lake</p><p>Email: wristlab@outlook.com</p></div>` },
+    { h: 'Modifiche',
+      body: `<p>In caso di modifiche, la data di revisione verrà aggiornata su questa pagina.</p>` }
+  ]
+},
+
+// ── Spanish ───────────────────────────────────────────────────────────────────
+es: {
+  title: 'Política de privacidad',
+  subtitle: 'WristLab',
+  updated: 'Última actualización: 10 de abril de 2026',
+  sections: [
+    { h: 'Resumen',
+      body: `<p>WristLab es una <span class="highlight">aplicación puramente sin conexión</span>. No recopila, almacena, transmite ni comparte ningún dato personal. Todos los datos de sensores se procesan localmente en tiempo real y se descartan al cerrar la página.</p>` },
+    { h: 'Permisos y sensores',
+      body: `<ul>
+        <li><b>Acelerómetro</b> — Análisis de aceleración, medición de golpes, dados virtuales, etc.</li>
+        <li><b>Giroscopio</b> — Indicador de actitud, medición de golpes</li>
+        <li><b>Micrófono</b> — Análisis de audio y espectro solo mientras la página de audio está abierta; el audio se procesa en tiempo real, <b>nunca se graba ni almacena</b></li>
+        <li><b>Vibración</b> — Retroalimentación háptica</li>
+        <li><b>Sensores sin autorización</b>: barómetro, gravedad, magnetómetro, luz ambiental, orientación — usados en tiempo real en sus páginas correspondientes</li>
+      </ul>` },
+    { h: 'Manejo de datos',
+      body: `<ul>
+        <li>Todos los datos se procesan localmente — <b>nada se envía a ningún servidor</b></li>
+        <li>Los datos de sensores solo se recopilan mientras la página está abierta</li>
+        <li>Sin almacenamiento persistente</li>
+        <li>La app no contiene código de solicitudes de red</li>
+      </ul>` },
+    { h: 'Servicios de terceros',
+      body: `<p>No se integran SDKs de terceros, publicidad, análisis ni funciones de intercambio social.</p>` },
+    { h: 'Sus derechos (RGPD / LOPD)',
+      body: `<p>Tiene derecho a acceso, rectificación, supresión, limitación, portabilidad y oposición. Estos derechos carecen de objeto práctico dado que la app no conserva datos personales.</p>
+      <div class="note"><p>Responsable: Lake · wristlab@outlook.com<br>Puede presentar reclamación ante la AEPD (aepd.es).</p></div>` },
+    { h: 'Residentes en California (CCPA)',
+      body: `<div class="note"><p>No vendemos ni compartimos su información personal según lo definido por la CCPA, ya que no recopilamos ningún dato.</p></div>` },
+    { h: 'Contacto',
+      body: `<div class="box"><p>Desarrollador: Lake</p><p>Correo: wristlab@outlook.com</p></div>` },
+    { h: 'Cambios en la política',
+      body: `<p>Si la política cambia, actualizaremos la fecha en esta página.</p>` }
+  ]
+},
+
+// ── Portuguese ────────────────────────────────────────────────────────────────
+pt: {
+  title: 'Política de Privacidade',
+  subtitle: 'WristLab',
+  updated: 'Última atualização: 10 de abril de 2026',
+  sections: [
+    { h: 'Visão Geral',
+      body: `<p>WristLab é um <span class="highlight">aplicativo puramente offline</span>. Não coleta, armazena, transmite nem compartilha dados pessoais. Todos os dados dos sensores são processados localmente em tempo real e descartados ao fechar a página.</p>` },
+    { h: 'Permissões e Sensores',
+      body: `<ul>
+        <li><b>Acelerômetro</b> — Análise de aceleração, medição de socos, dados virtuais, etc.</li>
+        <li><b>Giroscópio</b> — Indicador de atitude, medição de socos</li>
+        <li><b>Microfone</b> — Análise de áudio e espectro somente enquanto a página de áudio está aberta; o áudio é processado em tempo real, <b>nunca gravado ou armazenado</b></li>
+        <li><b>Vibração</b> — Feedback háptico</li>
+        <li><b>Sensores sem autorização</b>: barômetro, gravidade, magnetômetro, luz ambiente, orientação — usados em tempo real nas páginas correspondentes</li>
+      </ul>` },
+    { h: 'Tratamento de Dados',
+      body: `<ul>
+        <li>Todos os dados são processados localmente — <b>nada é enviado a servidores</b></li>
+        <li>Dados de sensores são coletados apenas enquanto a página está aberta</li>
+        <li>Sem armazenamento persistente</li>
+        <li>O app não contém código de requisição de rede</li>
+      </ul>` },
+    { h: 'Serviços de Terceiros',
+      body: `<p>Nenhum SDK de terceiros, publicidade, análise ou compartilhamento social é integrado.</p>` },
+    { h: 'Seus Direitos (LGPD)',
+      body: `<p>Você tem direito de acesso, correção, eliminação, portabilidade e oposição ao tratamento. Como o app não retém dados pessoais, esses direitos são sem objeto prático.</p>
+      <div class="note"><p>Controlador: Lake · wristlab@outlook.com<br>Brasil: pode contatar a ANPD (gov.br/anpd). Portugal: CNPD (cnpd.pt).</p></div>` },
+    { h: 'Contato',
+      body: `<div class="box"><p>Desenvolvedor: Lake</p><p>E-mail: wristlab@outlook.com</p></div>` },
+    { h: 'Alterações',
+      body: `<p>Se a política for alterada, a data de revisão será atualizada nesta página.</p>` }
+  ]
+},
+
+// ── Russian ───────────────────────────────────────────────────────────────────
+ru: {
+  title: 'Политика конфиденциальности',
+  subtitle: 'WristLab',
+  updated: 'Последнее обновление: 10 апреля 2026',
+  sections: [
+    { h: 'Обзор',
+      body: `<p>WristLab — это <span class="highlight">полностью офлайн-приложение</span>. Оно не собирает, не хранит, не передаёт и не распространяет личные данные. Все данные датчиков обрабатываются локально в реальном времени и удаляются при закрытии страницы.</p>` },
+    { h: 'Разрешения и датчики',
+      body: `<ul>
+        <li><b>Акселерометр</b> — Анализ ускорения, измерение ударов, виртуальные кости и др.</li>
+        <li><b>Гироскоп</b> — Индикатор ориентации, измерение ударов</li>
+        <li><b>Микрофон</b> — Аудиоанализ и спектр только пока открыта страница аудио; звук обрабатывается в реальном времени, <b>никогда не записывается и не сохраняется</b></li>
+        <li><b>Вибрация</b> — Тактильная обратная связь</li>
+        <li><b>Датчики без разрешения</b>: барометр, гравитация, магнетометр, освещённость, ориентация — используются в реальном времени на соответствующих страницах</li>
+      </ul>` },
+    { h: 'Обработка данных',
+      body: `<ul>
+        <li>Все данные обрабатываются локально — <b>ничто не отправляется на серверы</b></li>
+        <li>Данные датчиков собираются только пока страница открыта</li>
+        <li>Постоянное хранение отсутствует</li>
+        <li>Приложение не содержит кода сетевых запросов</li>
+      </ul>` },
+    { h: 'Сторонние сервисы',
+      body: `<p>Сторонние SDK, реклама, аналитика и функции социального обмена не интегрированы.</p>` },
+    { h: 'Ваши права (152-ФЗ)',
+      body: `<p>Вы вправе запрашивать доступ, исправление и удаление персональных данных. Поскольку приложение не хранит персональных данных, эти права практически неприменимы.</p>
+      <div class="note"><p>Оператор: Lake · wristlab@outlook.com<br>Так как приложение не обрабатывает и не хранит персональные данные за пределами оперативной памяти устройства, уведомление в Роскомнадзор не требуется, требования о локализации данных не применяются.</p></div>` },
+    { h: 'Контакты',
+      body: `<div class="box"><p>Разработчик: Lake</p><p>Email: wristlab@outlook.com</p></div>` },
+    { h: 'Изменения',
+      body: `<p>При изменении политики дата обновления на этой странице будет пересмотрена.</p>` }
+  ]
+},
+
+// ── Japanese ──────────────────────────────────────────────────────────────────
+ja: {
+  title: 'プライバシーポリシー',
+  subtitle: 'WristLab',
+  updated: '最終更新日：2026年4月10日',
+  sections: [
+    { h: '概要',
+      body: `<p>WristLabは<span class="highlight">完全オフラインのアプリ</span>です。個人データの収集・保存・送信・共有は一切行いません。センサーデータはデバイス上でローカルにリアルタイム処理され、ページを閉じると即座に破棄されます。</p>` },
+    { h: '権限とセンサー',
+      body: `<ul>
+        <li><b>加速度センサー</b> — 加速度分析・パンチ測定・バーチャルダイスなど</li>
+        <li><b>ジャイロスコープ</b> — 姿勢インジケーター・パンチ測定</li>
+        <li><b>マイク</b> — 音声分析ページを開いている間のみ使用；リアルタイム波形・スペクトル表示専用、<b>録音・保存は一切なし</b></li>
+        <li><b>バイブレーション</b> — 触覚フィードバック</li>
+        <li><b>承認不要のセンサー</b>：気圧計・重力・磁力計・照度・方向センサー — 各機能ページでリアルタイム使用のみ</li>
+      </ul>` },
+    { h: 'データの取り扱い',
+      body: `<ul>
+        <li>すべてのデータはローカルで処理 — <b>サーバーへの送信はゼロ</b></li>
+        <li>センサーデータは対象ページを開いている間のみ収集</li>
+        <li>永続的な保存は一切なし</li>
+        <li>ネットワーク通信コードを含まない</li>
+      </ul>` },
+    { h: 'サードパーティサービス',
+      body: `<p>サードパーティSDK・広告・分析・ソーシャル共有機能は一切統合されていません。</p>` },
+    { h: 'お客様の権利（個人情報保護法）',
+      body: `<p>個人情報の開示・訂正・削除・利用停止を請求する権利があります。本アプリは個人データを保持しないため、これらの権利は実質的に適用対象外です。</p>
+      <div class="note"><p>事業者：Lake · wristlab@outlook.com<br>個人情報保護委員会（ppc.go.jp）へのご相談も可能です。</p></div>` },
+    { h: 'お問い合わせ',
+      body: `<div class="box"><p>開発者：Lake</p><p>メール：wristlab@outlook.com</p></div>` },
+    { h: 'ポリシーの変更',
+      body: `<p>変更があった場合は本ページの改訂日を更新します。</p>` }
+  ]
+},
+
+// ── Arabic ────────────────────────────────────────────────────────────────────
+ar: {
+  title: 'سياسة الخصوصية',
+  subtitle: 'WristLab',
+  updated: 'آخر تحديث: 10 أبريل 2026',
+  sections: [
+    { h: 'نظرة عامة',
+      body: `<p>WristLab تطبيق <span class="highlight">يعمل بالكامل دون اتصال بالإنترنت</span>. لا يجمع ولا يخزن ولا ينقل ولا يشارك أي بيانات شخصية. تُعالَج جميع بيانات الاستشعار محلياً على جهازك في الوقت الفعلي وتُحذف فور إغلاق الصفحة.</p>` },
+    { h: 'الأذونات وأجهزة الاستشعار',
+      body: `<ul>
+        <li><b>مقياس التسارع</b> — تحليل التسارع وقياس القوة والنرد الافتراضي وغيرها</li>
+        <li><b>الجيروسكوب</b> — مؤشر الاتجاه وقياس القوة</li>
+        <li><b>الميكروفون</b> — تحليل الصوت والطيف فقط أثناء فتح صفحة الصوت؛ الصوت يُعالَج آنياً، <b>لا يُسجَّل ولا يُخزَّن</b></li>
+        <li><b>الاهتزاز</b> — ردود فعل لمسية</li>
+        <li><b>أجهزة استشعار لا تحتاج إذناً</b>: البارومتر والجاذبية والمغناطيس وضوء المحيط وأجهزة التوجيه — تُستخدم آنياً فقط في صفحاتها المخصصة</li>
+      </ul>` },
+    { h: 'كيفية التعامل مع البيانات',
+      body: `<ul>
+        <li>جميع البيانات تُعالَج محلياً — <b>لا شيء يُرسَل إلى أي خادم</b></li>
+        <li>بيانات الاستشعار تُجمَع فقط أثناء فتح الصفحة المعنية</li>
+        <li>لا يوجد تخزين دائم من أي نوع</li>
+        <li>التطبيق لا يحتوي على أي كود لطلبات الشبكة</li>
+      </ul>` },
+    { h: 'خدمات الطرف الثالث',
+      body: `<p>لا يتضمن التطبيق أي SDK خارجي أو إعلانات أو تحليلات أو وظائف مشاركة اجتماعية.</p>` },
+    { h: 'حقوقك (PDPL الإمارات / المملكة العربية السعودية)',
+      body: `<p>يحق لك الوصول إلى بياناتك وتصحيحها وحذفها والاعتراض على معالجتها. نظراً لأن التطبيق لا يحتفظ بأي بيانات شخصية، تظل هذه الحقوق عديمة الموضوع عملياً.</p>
+      <div class="note"><p>المسؤول عن البيانات: Lake · wristlab@outlook.com<br>بيانات الميكروفون تُعالَج فقط لعرض شكل الموجة الصوتية في الوقت الفعلي ولا تُخزَّن — لا يوجد تعرف على الصوت أو أي بيانات بيومترية.</p></div>` },
+    { h: 'التواصل معنا',
+      body: `<div class="box"><p>المطور: Lake</p><p>البريد الإلكتروني: wristlab@outlook.com</p></div>` },
+    { h: 'التغييرات على هذه السياسة',
+      body: `<p>في حال تغيير السياسة، سيتم تحديث تاريخ المراجعة في هذه الصفحة.</p>` }
+  ]
+}
+
+}; // end C
+
+// ─── Logic ───────────────────────────────────────────────────────────────────
+
+function detectLang() {
+  const saved = localStorage.getItem('wl_lang');
+  if (saved && C[saved]) return saved;
+
+  const nav = (navigator.language || 'en').toLowerCase();
+  const map = {
+    zh: 'zh', 'zh-cn': 'zh', 'zh-tw': 'zh',
+    en: 'en', 'en-us': 'en', 'en-gb': 'en',
+    de: 'de', 'de-de': 'de', 'de-at': 'de', 'de-ch': 'de',
+    fr: 'fr', 'fr-fr': 'fr', 'fr-be': 'fr', 'fr-ch': 'fr',
+    it: 'it', 'it-it': 'it',
+    es: 'es', 'es-es': 'es', 'es-mx': 'es', 'es-ar': 'es',
+    pt: 'pt', 'pt-br': 'pt', 'pt-pt': 'pt',
+    ru: 'ru', 'ru-ru': 'ru',
+    ja: 'ja', 'ja-jp': 'ja',
+    ar: 'ar', 'ar-sa': 'ar', 'ar-ae': 'ar', 'ar-eg': 'ar'
+  };
+  return map[nav] || map[nav.split('-')[0]] || 'en';
+}
+
+function render(lang) {
+  const d = C[lang] || C.en;
+  const isRtl = lang === 'ar';
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+  document.title = d.title;
+
+  let html = `<h1>${d.title}</h1><div class="meta">${d.subtitle} · ${d.updated}</div>`;
+  for (const s of d.sections) {
+    html += `<h2>${s.h}</h2>${s.body}`;
+  }
+  document.getElementById('content').innerHTML = html;
+  localStorage.setItem('wl_lang', lang);
+}
+
+function setLang(lang) {
+  render(lang);
+}
+
+// Build switcher
+(function init() {
+  const sel = document.getElementById('langSelect');
+  const cur = detectLang();
+  for (const [code, label] of Object.entries(LANGS)) {
+    const opt = document.createElement('option');
+    opt.value = code;
+    opt.textContent = label;
+    if (code === cur) opt.selected = true;
+    sel.appendChild(opt);
+  }
+  render(cur);
+})();
+</script>
+
+</body>
+</html>
