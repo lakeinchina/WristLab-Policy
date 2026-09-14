@@ -422,6 +422,15 @@ ar: {
 // ─── Logic ───────────────────────────────────────────────────────────────────
 
 function detectLang() {
+  // URL 参数 ?lang=xx 优先级最高:审核/分享场景强制指定语言,如 privacy.html?lang=zh-CN
+  const qp = new URLSearchParams(location.search).get('lang');
+  if (qp) {
+    const k = qp.toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(C, k)) return k;
+    const base = k.split('-')[0];
+    if (Object.prototype.hasOwnProperty.call(C, base)) return base;
+  }
+
   const saved = localStorage.getItem('wl_lang');
   if (saved && C[saved]) return saved;
 
